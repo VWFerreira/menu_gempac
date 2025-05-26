@@ -1,0 +1,221 @@
+:root {
+    --primary-color: #007bff;
+    --highlight-color: #d50000;
+    --secondary-color: #f8f9fa;
+    --text-color: #222;
+    --text-muted: #666;
+    --bg-white: transparent;
+    --bg-light: transparent;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 40px;
+}
+
+body {
+    position: relative;
+    background: none;
+    font-family: "Roboto", sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center top;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.sidebar {
+    background-color: rgba(75, 7, 7, 0.9);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    z-index: 1000;
+    border: none;
+    box-shadow: none;
+    min-width: 280px;
+    border-left: 4px solid #007bff;
+}
+
+.sidebar img.logo {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-lg);
+    max-width: 160px;
+    align-self: center;
+}
+
+.fluig-logo {
+    height: 48px;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.sidebar h2 {
+    font-size: 17px;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: var(--space-xs);
+    text-align: center;
+    color: var(--text-color);
+}
+
+.sidebar .form-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+#polo {
+    font-size: 14px;
+}
+
+#subpaginas button {
+    padding: var(--space-sm) var(--space-md);
+    background: var(--highlight-color);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#subpaginas button:hover {
+    background-color: #a60000;
+}
+
+#contratos a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0;
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+#contratos a:hover {
+    color: var(--primary-color);
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 180px;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.video-item iframe:hover {
+    transform: scale(1.01);
+}
+
+.video-item p {
+    margin-top: var(--space-sm);
+    font-size: 13.5px;
+    color: var(--text-muted);
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 3rem;
+    font-size: 15px;
+}
+
+main h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+main .description {
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+.video-section {
+    background: transparent;
+    padding: var(--space-lg) 0;
+    border-radius: 12px;
+    box-shadow: none;
+    z-index: 1;
+    position: relative;
+}
+
+/* Responsividade */
+.video-section h2 {
+    font-size: 17px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+@media (max-width: 1024px) {
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        background-color: rgba(
+            75,
+            7,
+            7,
+            0.9
+        ); /* Corrigido: mesma cor da versão desktop */
+        z-index: 1001;
+        border-left: 4px solid #007bff; /* Garante a borda azul no mobile */
+    }
+
+    main {
+        padding: var(--space-md) var(--space-lg);
+    }
+
+    .video-item iframe {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-item iframe {
+        height: 220px;
+    }
+}
+
+@media (max-width: 1200px) {
+    main {
+        padding-right: 5vw;
+    }
+}
+footer.rodape-contrato {
+    position: relative;
+    z-index: 2; /* Acima do vídeo */
+    color: #000000;
+    background: none; /* Remove a caixa */
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+}
+
+footer.rodape-contrato strong {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #000000;
+}

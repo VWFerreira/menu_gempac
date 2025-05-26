@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GENPAC</title>
+  <link rel="icon" href="img/logo01.png" />
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Google Font + Estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="site-background">
+
+  <video id="background-video" autoplay muted loop playsinline>
+    <source src="img/fundo.mp4" type="video/mp4" />
+    Seu navegador não suporta vídeos em HTML5.
+  </video>
+
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar bg-white p-4 shadow-sm d-flex flex-column">
+      <img src="img/logo01.png" alt="Logo GENPAC" class="logo mb-3 mx-auto" style="max-width: 200px;">
+
+      <div class="mb-3">
+        <label for="polo" class="form-label">Selecione o Polo</label>
+        <select id="polo" class="form-select" onchange="updateSubpaginas()">
+          <option value="" disabled selected>Selecione...</option>
+        </select>
+      </div>
+
+      <div class="mb-3" id="subpaginasContainer" style="display: none;">
+        <label class="form-label">Selecione a Página</label>
+        <div id="subpaginas" class="d-flex flex-column gap-2"></div>
+      </div>
+
+      <div class="mb-3" id="contratos"></div>
+
+      <div class="mt-auto text-center pt-3">
+        <a href="https://gennesisengenharia160516.fluig.cloudtotvs.com.br/portal/p/1/home" target="_blank" class="d-inline-flex align-items-center gap-2 text-decoration-none text-dark">
+          <img src="img/fluig.png" alt="Fluig" class="fluig-logo" style="height: 100px;">
+
+        </a>
+      </div>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="flex-grow-1 p-5">
+      <header class="mb-4">
+        <h1 class="fw-bold mb-2">GENPAC</h1>
+        <p class="text-muted">Área destinada para vídeos, textos e orientações.</p>
+      </header>
+
+      <!-- Seção 1 -->
+      <section class="mb-5 video-section">
+        <h2 class="h5 d-flex align-items-center gap-2 mb-4">
+          <i class="bi bi-play-btn-fill fs-5 text-primary"></i>
+          Orientações - Banrisul Centro
+        </h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-3">
+            <div class="video-item card border-0 shadow-sm p-3">
+              <iframe src="https://www.youtube.com/embed/YDw-vPdMw_g" frameborder="0" allowfullscreen></iframe>
+              <p class="mt-2 small text-muted">🔹 Acesso e Ordens de Serviços</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="video-item card border-0 shadow-sm p-3">
+              <iframe src="https://www.youtube.com/embed/Punyd4jayP0" frameborder="0" allowfullscreen></iframe>
+              <p class="mt-2 small text-muted">🔹 Dashboard, Equipe, Lista de Ferramentas...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 2 -->
+      <section class="mb-5 video-section">
+        <h2 class="h5 d-flex align-items-center gap-2 mb-4">
+          <i class="bi bi-play-btn-fill fs-5 text-primary"></i>
+          Orientações - SMED Leste e Norte
+        </h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-3">
+            <div class="video-item card border-0 shadow-sm p-3">
+              <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" frameborder="0" allowfullscreen></iframe>
+              <p class="mt-2 small text-muted">🔹 Introdução ao sistema</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+<footer class="no-print rodape-contrato">
+  <strong>&copy; GENPAC</strong>
+  <span>Todos os direitos reservados · By Vilmar William Ferreira</span>
+</footer>
+
+
+
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
