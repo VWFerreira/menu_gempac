@@ -129,20 +129,33 @@ const showContratos = (contratos) => {
         contratosDiv.innerHTML = `<h3 class="h6 mb-3">Contratos:</h3>`;
         Object.entries(contratos).forEach(([nome, { url, icon }]) => {
             const link = createElement("a", {
-                href: url || "#",
-                target: "_blank",
+                href: "#",
                 class: "d-flex align-items-center gap-2 mb-2 text-decoration-none",
                 html: `
-                  <img src="${
-                      icon || "img/default.png"
-                  }" width="20" height="20" alt="">
+                  <img src="${icon || "img/default.png"}" width="20" height="20" alt="">
                   <span>${nome}</span>
                 `,
             });
+
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (nome === "Formulário Feedback") {
+                    const codigo = prompt("Digite o código de acesso:");
+                    if (codigo === "CONTRATOS2025") {
+                        window.open(url, "_blank");
+                    } else {
+                        alert("Código incorreto. Acesso negado.");
+                    }
+                } else {
+                    window.open(url || "#", "_blank");
+                }
+            });
+
             contratosDiv.appendChild(link);
         });
     }, 400);
 };
+
 
 // ---------- Inicialização ----------
 document.addEventListener("DOMContentLoaded", () => {
@@ -150,21 +163,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // applySavedDarkMode(); ← remova essa linha se não usa tema escuro
 });
 
-// ---------- Intercepta clique para "Formulário Feedback" ----------
-document.addEventListener("click", function (e) {
-    if (e.target.closest("a")) {
-        const link = e.target.closest("a");
-        const nomeContrato = link.textContent.trim();
 
-        if (nomeContrato === "Formulário Feedback") {
-            e.preventDefault(); // Impede o redirecionamento automático
-
-            const codigo = prompt("Digite o código de acesso:");
-            if (codigo === "CONTRATOS2025") {
-                window.open(link.href, "_blank");
-            } else {
-                alert("Código incorreto. Acesso negado.");
-            }
-        }
-    }
-});
