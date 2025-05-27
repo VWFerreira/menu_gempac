@@ -149,3 +149,22 @@ document.addEventListener("DOMContentLoaded", () => {
     initPoloSelect();
     // applySavedDarkMode(); ← remova essa linha se não usa tema escuro
 });
+
+// ---------- Intercepta clique para "Formulário Feedback" ----------
+document.addEventListener("click", function (e) {
+    if (e.target.closest("a")) {
+        const link = e.target.closest("a");
+        const nomeContrato = link.textContent.trim();
+
+        if (nomeContrato === "Formulário Feedback") {
+            e.preventDefault(); // Impede o redirecionamento automático
+
+            const codigo = prompt("Digite o código de acesso:");
+            if (codigo === "CONTRATOS2025") {
+                window.open(link.href, "_blank");
+            } else {
+                alert("Código incorreto. Acesso negado.");
+            }
+        }
+    }
+});
