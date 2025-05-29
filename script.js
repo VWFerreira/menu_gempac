@@ -65,9 +65,15 @@ const polosData = {
     "POLO RN NC": {},
     "POLO PR": {
         "Contratos PR": {
-            FUNDEPAR: {
+            Fundepar: {
                 url: "https://www.appsheet.com/start/5be3b962-b0aa-4b42-b533-7573e7eb3da6",
                 icon: "img/menueng.png",
+            },
+            "Controle Contratos": {
+                url: "https://formulario-feedback.onrender.com/",
+                icon: "img/form.png",
+                protected: true,
+                password: "CONTRATOS2025",
             },
         },
     },
