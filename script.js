@@ -70,10 +70,8 @@ const polosData = {
                 icon: "img/menueng.png",
             },
             "Controle Contratos": {
-                url: "https://formulario-feedback.onrender.com/",
+                url: "https://bdfundepr.web.app/",
                 icon: "img/form.png",
-                protected: true,
-                password: "CONTRATOS2025",
             },
         },
     },
