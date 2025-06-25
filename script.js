@@ -33,7 +33,7 @@ const polosData = {
                 icon: "img/menugen.png",
             },
             "Banrisul Centro": {
-                url: "https://www.appsheet.com/start/3e45dd23-b19e-49cb-9713-8cc856b1efaf",
+                url: "https://controle-de-contrato.web.app/index.html",
                 icon: "img/menugen.png",
             },
         },
